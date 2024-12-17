@@ -69,7 +69,7 @@ def update():
     if head == pomme:
         score += 1
         while pomme in snake:
-            pomme = [randint(0, WIDTH/CASE - 1), randint(0, HEIGHT/CASE - 1)]
+            pomme = [randint(0, int(WIDTH/CASE) - 1), randint(0, int(HEIGHT/CASE) - 1)]
     else:
         snake.pop()
     
