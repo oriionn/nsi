@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Ma page</title>
+
+    <script type="text/javascript">
+      window.onload = () => {
+        setInterval(() => {
+          let date = new Date();
+          let h = date.getHours();
+          let m = date.getMinutes();
+          let s = date.getSeconds();
+          let time = `${h < 10 ? `0${h}`:h}:${m < 10 ? `0${m}`:m}:${s < 10 ? `0${s}`:s}`;
+          document.getElementById("horloge").innerText = time;
+        }, 1000)
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Mon super site</h1>
+    <p>Tout fonctionne parfaitement; voici <a href="{{ url_for('about') }}">un lien</a> vers la page "À propos"</p>
+    <p>Il est {{heure}}h {{minute}} minutes et {{seconde}} secondes</p>
+
+    <p>Il est <span id="horloge"></span> (<span class="highlight">En direct</span>)</p>
+  </body>
+</html>
