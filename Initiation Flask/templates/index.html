@@ -22,6 +22,7 @@
   <body>
     <h1>Mon super site</h1>
     <p>Tout fonctionne parfaitement; voici <a href="{{ url_for('about') }}">un lien</a> vers la page "À propos"</p>
+    <p>Cliquez <a href="{{ url_for('convert') }}">ici</a> pour accéder à un convertisseur binaire/hexadecimal</p>
     <p>Il est {{heure}}h {{minute}} minutes et {{seconde}} secondes</p>
 
     <p>Il est <span id="horloge"></span> (<span class="highlight">En direct</span>)</p>

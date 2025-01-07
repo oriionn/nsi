@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Convertisseur</title>
+  <script src="{{ url_for('static', filename='convert.js') }}"></script>
+</head>
+
+<body>
+  <h3>Convertir un nombre entier en binaire ou en hexadécimal</h3>
+
+  <p>Entier à convertir : <input type="text" size="5" id="entier" maxlength="5"></p>
+
+  <p>Cette page permet de convertir un entier (base 10) en binaire (base 2) ou en hexadécimal (base 16).</p>
+
+  <p>Convertir en :
+    <input type="radio" name="choix" id="binaire"> binaire
+    <input type="radio" name="choix" id="hexa"> hexadécimal
+    <input type="button" onclick="Calcul()" value="Convertir">
+  </p>
+
+  <p>Résultat : <input type="text" size="20" id="resultat" disabled="disabled"></p>
+
+  <p>Cliquez <a href="{{ url_for('index') }}">ici</a> pour retourner vers la première page</p>
+</body>
+
+</html>
