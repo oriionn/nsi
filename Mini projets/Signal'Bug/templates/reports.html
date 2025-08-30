@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signalements</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css' ) }}">
+</head>
+<body>
+    <h1>Les signalements</h1>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <td>Identifiant</td>
+                    <td>Nom & Prénom</td>
+                    <td>Email</td>
+                    <td>Version de l'application</td>
+                    <td>Description</td>
+                    <td>Captures d'écrans</td>
+                    <td>Actions</td>
+                </tr>
+                {% for report in data %}
+                    <tr>
+                        <td>{{report["id"]}}</td>
+                        <td>{{report["name"]}}</td>
+                        <td>{{report["email"]}}</td>
+                        <td>{{report["version"]}}</td>
+                        <td>{{report["description"]}}</td>
+                        <td>
+                            <ul>
+                                {% for screenshot in report["screenshots"] %}
+                                    <li><a href="{{ url_for('static', filename='uploads/' ~ screenshot) }}" target="_blank">Voir capture d'écran n°{{ loop.index }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td>
+                            <form action="/reports" method="post" class="mark_as_made">
+                                <input style="display: none;" type="text" value="{{ report['id'] }}" name="id" />
+                                <input type="submit" value="Marquer comme réglé" />
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </thead>
+        </table>
+    </div>
+    <a href="/" style="margin-top: 10px;">Signaler un bug</a>
+
+</body>
+</html>

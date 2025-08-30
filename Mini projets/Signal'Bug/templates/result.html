@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapporté avec succès</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css' ) }}">
+</head>
+<body>
+    <h1>Succès</h1>
+    <p>Votre signalement a été pris en compte avec succès.</p>
+    <p>Pour voir la liste de tout les bugs, <a href="{{ url_for('reports') }}" target="_blank">cliquez ici</a></p>
+    <p>Vous pouvez également resignaler un bug en <a href="/">cliquant ici</a></p>
+</body>
+</html>

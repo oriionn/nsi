@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal'Bug</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css' ) }}">
+</head>
+<body>
+    <h1>Signal'Bug</h1>
+    <p>Signaler facilement un bug pour l'application <b>Papillon</b> facilement !</p>
+
+    <form method="POST" action="/report" enctype = "multipart/form-data">
+        <label for="email">Votre nom et prénom</label>
+        <input type="text" name="name" id="name" required />
+        <label for="email">Adresse email</label>
+        <input type="email" name="email" id="email" required />
+        <label for="email">La version de l'application</label>
+        <input type="text" name="version" id="version" required />
+        <label for="description">Description</label>
+        <textarea name="description" id="description" required></textarea>
+        <label for="screenshots">Capture d'écrans (optionnel)</label>
+        <input type="file" accept="image/*, video/*" id="screenshots" name="screenshots" multiple />
+
+        <input type="submit" value="Envoyer" id="submit" />
+    </form>
+</body>
+</html>
